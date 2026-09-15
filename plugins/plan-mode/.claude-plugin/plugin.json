@@ -1,0 +1,17 @@
+{
+  "name": "plan-mode",
+  "version": "0.3.0",
+  "description": "Plan non-trivial changes before touching code, then execute in reviewed phases.",
+  "author": {
+    "name": "miikkajs"
+  },
+  "repository": "https://github.com/miikkajs/plan-mode",
+  "license": "MIT",
+  "keywords": [
+    "planning",
+    "plan-mode",
+    "subagents",
+    "code-review",
+    "workflow"
+  ]
+}
