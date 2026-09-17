@@ -1,6 +1,6 @@
 {
   "name": "plan-mode",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Plan non-trivial changes before touching code, then execute in reviewed phases.",
   "author": {
     "name": "miikkajs"
