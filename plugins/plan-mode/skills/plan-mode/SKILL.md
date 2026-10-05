@@ -71,7 +71,7 @@ Recommended: <n>; a bare Go takes it.
 
 ## Execution
 
-Execution runs at the picked cadence, no further cadence question.
+Execution runs at the picked cadence, no further cadence question. Track every step, however short the plan, in the host's step-tracking tool (TodoWrite or TaskCreate/TaskUpdate, update_plan, write_todos, todo_write, manage_todo_list, a plan-progress tool): one item per Steps row, each in progress before its work starts and completed (or failed, where the tool has that state) once verified, in the tool's own status values; a replan rewrites the list to the revised table. No such tool: skip it.
 
 Every implementation step is a subagent where the host has them. There the main agent never writes code: not a one-line fix, not a review finding, not a lint repair. It does version control, builds, tests, reading to verify, and triage. Small edits are exactly the ones that slip past a review boundary. Where the host has no subagents, do the steps yourself, sequentially.
 
