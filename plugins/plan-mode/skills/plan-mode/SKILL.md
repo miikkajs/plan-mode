@@ -50,13 +50,13 @@ Terse, fragments fine. No literal code blocks; short pseudo-code is fine. A smal
 - **Risks**: uncertainties and irreversible actions. Then, under its own sub-heading, improvements you thought of, unasked, not built by this plan. Mark each take (worth doing, named as follow-up work) or skip (not worth doing here), reason on the same line. Risks carry no mark, nor do the user's settled decisions read back to them. The mark is your own verdict, already made, never a choice put to the user.
 - **Assumptions**: what the plan takes as true and would break on, unconfirmed ones marked. Every outside-the-repo fact the plan leans on and could not look up belongs here by name (package, method signature, error code, version), with the lookup that would settle it. Declarative ("X is assumed to be Y, say if not"), never questions.
 
-Present the whole plan every time approval is asked, every re-presentation after an edit included. Never a delta, a diff, or a summary of what changed.
+Present the whole plan every time approval is asked, every re-presentation after a gate-reopening edit included. Never a delta, a diff, or a summary of what changed.
 
 The plan message carries exactly one question, the request for approval; none embedded in the plan text. Plus one declarative line naming where a saved copy would go (`docs/plans/<name>.md` shape): a plans directory already in the repo, else a gitignored one, else the user's, else a scratch directory. No plan file is written until the user asks for one; writing one unasked is the same violation as editing code before Go. Once a file legitimately exists, update its status as phases land, with commit ids, so a killed session can resume from it.
 
 ## Approval
 
-Approval is the word "Go", case-insensitive, optionally followed by one option number from the Go line, and nothing else. Not "yes", not "proceed", not "do it", not "go ahead", not "looks good". The plan ends with the Go line asking for it, the phase cadence as numbered options, part of the single approval question, printed as text, never its own question, never an ask-user popup. Only where the request gives the cadence is the Go line a plain Go, no options, Assumptions naming the cadence; "your call" does not give it. Otherwise each option on its own line, numbering fixed, then the one recommendation, chosen per plan, on its own line, all printed as plain lines, never a code block:
+Approval is the bare word "Go", case-insensitive, optionally followed by one option number from the Go line. Not "yes", not "proceed", not "do it", not "go ahead", not "looks good". The plan ends with the Go line asking for it, the phase cadence as numbered options, part of the single approval question, printed as text, never its own question, never an ask-user popup. Only where the request gives the cadence is the Go line a plain Go, no options, Assumptions naming the cadence; "your call" does not give it. Otherwise each option on its own line, numbering fixed, then the one recommendation, chosen per plan, on its own line, all printed as plain lines, never a code block:
 
 ```
 Go 1 = stop at each phase boundary
@@ -67,7 +67,7 @@ Recommended: <n>; a bare Go takes it.
 - Stop and end the turn after presenting. No edits in the turn that presents a plan.
 - An answered question or a settled decision is never approval.
 - A number not on the Go line ("Go 3") is not approval: ask again, start nothing.
-- Any plan edit or scope change re-opens the gate. An earlier Go covers the plan as presented, not a revised one. Every re-presentation carries the Go line again, and the new Go picks again.
+- A scope change, or a plan edit without a valid Go, re-opens the gate: an earlier Go covers the plan as presented, not a revised one, every re-presentation carries the Go line again, and the new Go picks again. Edits in the same message as a valid Go are approval with comments: fold each into the plan, report one line per edit saying how it landed, no re-presentation, no second Go. An edit the plan cannot absorb (it breaks a step, a dependency or an assumption) goes to the Replan trigger in Execution instead.
 
 ## Execution
 

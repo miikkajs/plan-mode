@@ -11,7 +11,7 @@
       "name": "plan-mode",
       "source": "./plugins/plan-mode",
       "description": "Plan non-trivial changes before touching code, then execute in reviewed phases.",
-      "version": "0.6.0"
+      "version": "0.7.0"
     }
   ]
 }
