@@ -19,7 +19,10 @@ An agent skill that makes a coding agent agree the shape of the work before it t
 - Hands every implementation step to a subagent under a brief (goal, files in scope, what not to touch, the report wanted back), leaving the main agent version control, builds, tests and triage rather than code of its own.
 - Treats the plan's Steps table as the dispatch table: independent steps in parallel, dependent ones in order, the split stated in the plan. A host without subagents runs the same steps in order in the main context.
 - Names in the Steps table, per step, which agent runs it (one the host provides or the repo defines), the exact model and the effort level, so the plan means the same thing when another session executes it.
+- Opens the pull request in the plan's first step wherever the repo has a remote that takes one, so the work is visible from the first commit rather than at the end.
 - Executes in phases, reviewing each phase's diff at its boundary, with the review, the fixes and the verification dispatched out too.
+- Proves a bug before fixing it: a bug fix reproduces the bug end to end in the running thing before any fix step, with the exact steps and the failing observation written into the plan, and reruns those same steps on the fixed code. A bug that cannot be reproduced is named as such, with the reason and the evidence that stands in for it.
+- Saves screenshots of every end-to-end run, reproduction and verification alike, to a path the plan names, or the raw output where there is nothing to see.
 - Stops separately at a destructive step (deploy, delete, purge, drop, a `--commit` run, external send, force push, schema migration, anything irreversible), for its own yes after Go.
 
 The rules themselves live in `plugins/plan-mode/skills/plan-mode/SKILL.md`, one markdown file: packaged as a Claude Code plugin, and read directly by OpenAI Codex, GitHub Copilot and Cursor.
